@@ -7,6 +7,7 @@
 /* For documment heading */
 
 #heading{
+    padding-top: 15px;
     font-size: 26px;
     font-family: 700;
     text-align: center;
@@ -35,25 +36,44 @@
 }
 
 .card{
-    width: 300px; 
+    width: 330px; 
     height: 300px;
     perspective: 500px;
     background-color: aqua;
+    border-radius: 20px;
     
     
 }
-
+#main{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    
+}
 .inner{
     width: 100%;
     height: 100%;
     transition: 0.5s;
+    transform-style: preserve-3d;
     
 }
-.front{
+.card:hover .inner{
+    transform: rotateY(180deg);
+}
+.front, .back{
     width: 100%;
     height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 20px;
+}
+.front{
+
     background-color: rgb(174, 150, 150);
 }
-.card:hover .inner{
-    transform: rotateX(180deg);
+.back{
+    background-color: rgb(255, 8, 0);
+    transform: rotateY(180deg);
 }
