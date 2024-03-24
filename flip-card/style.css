@@ -15,6 +15,7 @@
     margin: auto;
     letter-spacing:2px;
 }
+
 #heading::before{
     content:' ';
     background-color: red;
@@ -24,6 +25,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
 #heading::after{
     content:' ';
     background-color: red;
@@ -35,33 +37,38 @@
     margin-left: 280px; 
 }
 
-.card{
-    width: 330px; 
-    height: 300px;
-    perspective: 500px;
-    background-color: aqua;
-    border-radius: 20px;
-    
-    
-}
+/* image gallery */
+
 #main{
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
     
 }
+
+.card{
+    width: 355px; 
+    height: 300px;
+    perspective: 500px;
+}
+
 .inner{
     width: 100%;
     height: 100%;
     transition: 0.5s;
     transform-style: preserve-3d;
-    
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 20px;  
 }
+
+/* card flip */
+
 .card:hover .inner{
     transform: rotateY(180deg);
 }
+
 .front, .back{
     width: 100%;
     height: 100%;
@@ -69,11 +76,153 @@
     backface-visibility: hidden;
     border-radius: 20px;
 }
-.front{
 
-    background-color: rgb(174, 150, 150);
-}
+
 .back{
-    background-color: rgb(255, 8, 0);
     transform: rotateY(180deg);
+    padding: 20px;
+    border-radius: 20px;
+    
+}
+
+/* front image */
+
+#first .front {
+    background-image: url("https://i.natgeofe.com/n/20e923d3-042c-4045-942a-52308add6a75/great-wall-unesco-china_2x1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+#second .front {
+    background-image: url("https://cdn.britannica.com/88/189788-050-9B5DB3A4/Al-Dayr-Petra-Jordan.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+#third .front {
+    background-image: url("https://publisher-ncreg.s3.us-east-2.amazonaws.com/pb-ncregister/swp/hv9hms/media/20231122221124_45448c583eabca7ad6be347939c641312d4ce7570209ad29d3345175aea14fec.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+#four .front {
+    background-image: url("https://www.nathab.com/uploaded-files/carousels/HERO/South-America/Machu-Picchu-Extension-Hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+#five .front{
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Chichen_Itza_3.jpg/640px-Chichen_Itza_3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+#six .front {
+    background-image: url("https://images.nationalgeographic.org/image/upload/v1652340658/EducationHub/photos/colosseum.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+#seven .front {
+    background-image: url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover ;
+    background-repeat: no-repeat;
+}
+
+/* blur back */
+#seven .back::before{
+    content: '';
+    background-image: url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    filter: blur(5px);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover ;
+    background-repeat: no-repeat;
+}
+#six .back::before{
+    content: '';
+    background-image: url("https://images.nationalgeographic.org/image/upload/v1652340658/EducationHub/photos/colosseum.jpg");
+    filter: blur(5px);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover ;
+    background-repeat: no-repeat;
+}
+#five .back::before{
+    content: '';
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Chichen_Itza_3.jpg/640px-Chichen_Itza_3.jpg");
+    filter: blur(5px);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover ;
+    background-repeat: no-repeat;
+}
+#four .back::before{
+    content: '';
+    background-image: url("https://www.nathab.com/uploaded-files/carousels/HERO/South-America/Machu-Picchu-Extension-Hero.jpg");
+    filter: blur(5px);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover ;
+    background-repeat: no-repeat;
+}
+#third .back::before{
+    content: '';
+    background-image: url("https://publisher-ncreg.s3.us-east-2.amazonaws.com/pb-ncregister/swp/hv9hms/media/20231122221124_45448c583eabca7ad6be347939c641312d4ce7570209ad29d3345175aea14fec.jpg");
+    filter: blur(5px);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover ;
+    background-repeat: no-repeat;
+}
+#second .back::before{
+    content: '';
+    background-image: url("https://cdn.britannica.com/88/189788-050-9B5DB3A4/Al-Dayr-Petra-Jordan.jpg");
+    filter: blur(5px);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover ;
+    background-repeat: no-repeat;
+}
+#first .back::before{
+    content: '';
+    background-image: url("https://i.natgeofe.com/n/20e923d3-042c-4045-942a-52308add6a75/great-wall-unesco-china_2x1.jpg");
+    filter: blur(5px);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover ;
+    background-repeat: no-repeat;
+}
+
+.back>*{
+    position: absolute;
+    color: #181313;
+}
+.back h2{
+    left: 120px;
+}
+
+.back p{
+    top: 50px;
+    color: #ffffff;
+}
+#first .back h2, #five .back h2{
+    left: 80px;
 }
